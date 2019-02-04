@@ -1,0 +1,43 @@
+{
+    "name": "crosscopy/cross-copy",
+    "description": "Copy a matrix from one project to another",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "cross copy"
+    ],
+    "support": {
+        "docs": "???",
+        "issues": "???"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Butler",
+            "homepage": "michael@ipopdigital.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "crosscopy\\crosscopy\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Cross Copy",
+        "handle": "cross-copy",
+        "hasCpSettings": true,
+        "hasCpSection": true,
+        "changelogUrl": "???",
+        "components": {
+            "crossCopyService": "crosscopy\\crosscopy\\services\\CrossCopyService"
+        },
+        "class": "crosscopy\\crosscopy\\CrossCopy"
+    }
+}

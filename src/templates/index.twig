@@ -1,0 +1,46 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Cross Copy plugin for Craft CMS 3.x
+ *
+ * Cross Copy index.twig
+ *
+ * @author    Michael Butler
+ * @copyright Copyright (c) 2019 Michael Butler
+ * @link      michael@ipopdigital.com
+ * @package   CrossCopy
+ * @since     1.0.0
+ */
+#}
+
+{% extends "_layouts/cp" %}
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("crosscopy\\crosscopy\\assetbundles\\crosscopy\\CrossCopyAsset") %}
+{% do view.registerAssetBundle("crosscopy\\crosscopy\\assetbundles\\indexcpsection\\IndexCPSectionAsset") %}
+
+{# Link for the ? icon at the bottom of the page #}
+{% set docsUrl = "???" %}
+
+{# The title of this CP section #}
+{% set title = "Cross Copy" %}
+
+{# The URL to this plugin's base CP section #}
+{% set pluginCpUrl = url('cross-copy') %}
+
+{# Get a URL to an image in our AssetBundle #}
+{% set iconUrl = view.getAssetManager().getPublishedUrl('@crosscopy/crosscopy/assetbundles/indexcpsection/dist', true) ~ '/img/Index-icon.svg' %}
+
+{# Content that should appear in the page header#}
+{% set extraPageHeaderHtml %}
+    <div class="buttons">
+        <a href="{{ pluginCpUrl }}" class="btn submit add icon">{{ "Click Me!"|t('cross-copy') }}</a>
+    </div>
+{% endset %}
+
+{# The content of the CP Section#}
+{% set content %}
+    <h2>{{ "Index CP Section body goes here"|t('cross-copy') }}</h2>
+    <img src="{{ iconUrl }}" height="64" width="64" />
+    <p class="textline"></p>
+{% endset %}
